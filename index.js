@@ -27,7 +27,7 @@ function rollupify(filename, opts) {
     // Write a temp file just in case we are preceded by
     // another browserify transform
     var tmpfile = path.resolve(path.dirname(filename),
-      path.basename(filename) + '.tmp');
+      path.basename(filename) + Date.now().toString(36) + Math.random().toString(36) + '.tmp');
 
     var doSourceMap = opts.sourceMaps !== false;
 
